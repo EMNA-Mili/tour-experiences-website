@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - Agence de Voyage</title>
+    <link rel="stylesheet" href="reservation.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+<a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Tour & Experiences">
+    <span class="logo-text">Tour&Experiences</span>
+</a>
+            <ul class="nav-links">
+               <li><a href="index.html">Accueil</a></li>
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="reservation.html">Réservations</a></li>
+    <li><a href="about.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-reservation">
+        <div class="hero-overlay">
+            <h1>Réservez Votre Voyage</h1>
+            <p>Remplissez le formulaire ci-dessous pour réserver votre destination de rêve</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="reservation-section">
+        <div class="container">
+            <div class="reservation-container">
+                <!-- Formulaire de réservation -->
+                <div class="form-container">
+                    <h2>📝 Informations de Réservation</h2>
+                    <form id="reservation-form">
+                        <!-- Type de voyage -->
+                        <div class="form-group">
+                            <label for="type-voyage">Type de voyage <span class="required">*</span></label>
+                            <select id="type-voyage" name="type-voyage" required>
+                                <option value="">Choisissez un type</option>
+                                <option value="plage">🏖️ Plage</option>
+                                <option value="aventure">🏔️ Aventure</option>
+                                <option value="culture">🏛️ Culture</option>
+                                <option value="romantique">💑 Romantique</option>
+                                <option value="famille">👨‍👩‍👧‍👦 Famille</option>
+                            </select>
+                            <span class="error-message" id="error-type-voyage"></span>
+                        </div>
+
+                        <!-- Destination -->
+                        <div class="form-group">
+                            <label for="destination">Destination <span class="required">*</span></label>
+                            <select id="destination" name="destination" required>
+                                <option value="">Choisissez une destination</option>
+                                <option value="bali">Bali, Indonésie - 899€</option>
+                                <option value="maldives">Maldives - 1899€</option>
+                                <option value="marrakech">Marrakech, Maroc - 549€</option>
+                                <option value="patagonie">Patagonie, Argentine - 1299€</option>
+                                <option value="santorini">Santorini, Grèce - 1150€</option>
+                                <option value="tokyo">Tokyo, Japon - 1399€</option>
+                                <option value="kenya">Safari Kenya - 2199€</option>
+                                <option value="thailande">Thaïlande du Nord - 799€</option>
+                                <option value="islande">Islande - 1599€</option>
+                                <option value="amalfi">Côte Amalfitaine, Italie - 1099€</option>
+                                <option value="dubai">Dubaï, EAU - 1799€</option>
+                                <option value="croatie">Croatie - 699€</option>
+                            </select>
+                            <span class="error-message" id="error-destination"></span>
+                        </div>
+
+                        <!-- Dates -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date-depart">Date de départ <span class="required">*</span></label>
+                                <input type="date" id="date-depart" name="date-depart" required>
+                                <span class="error-message" id="error-date-depart"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="date-retour">Date de retour <span class="required">*</span></label>
+                                <input type="date" id="date-retour" name="date-retour" required>
+                                <span class="error-message" id="error-date-retour"></span>
+                            </div>
+                        </div>
+
+                        <!-- Nombre de passagers -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nb-adultes">Nombre d'adultes <span class="required">*</span></label>
+                                <input type="number" id="nb-adultes" name="nb-adultes" min="1" max="10" value="1" required>
+                                <span class="error-message" id="error-nb-adultes"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nb-enfants">Nombre d'enfants</label>
+                                <input type="number" id="nb-enfants" name="nb-enfants" min="0" max="10" value="0">
+                            </div>
+                        </div>
+
+                        <!-- Informations personnelles -->
+                        <h3 class="section-title">👤 Informations Personnelles</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nom">Nom <span class="required">*</span></label>
+                                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                                <span class="error-message" id="error-nom"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prenom">Prénom <span class="required">*</span></label>
+                                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                                <span class="error-message" id="error-prenom"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="exemple@email.com" required>
+                            <span class="error-message" id="error-email"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telephone">Téléphone <span class="required">*</span></label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="+216 55 55 55 55" required>
+                            <span class="error-message" id="error-telephone"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adresse">Adresse <span class="required">*</span></label>
+                            <input type="text" id="adresse" name="adresse" placeholder="Votre adresse complète" required>
+                            <span class="error-message" id="error-adresse"></span>
+                        </div>
+
+                        <!-- Préférences -->
+                        <h3 class="section-title">⚙️ Préférences</h3>
+
+                        <div class="form-group">
+                            <label for="hebergement">Type d'hébergement</label>
+                            <select id="hebergement" name="hebergement">
+                                <option value="standard">Standard</option>
+                                <option value="confort">Confort (+150€)</option>
+                                <option value="luxe">Luxe (+350€)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="assurance" name="assurance">
+                                Assurance annulation (+50€)
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="commentaires">Commentaires ou demandes spéciales</label>
+                            <textarea id="commentaires" name="commentaires" rows="4" placeholder="Informations supplémentaires..."></textarea>
+                        </div>
+
+                        <!-- Bouton de soumission -->
+                        <button type="submit" class="submit-btn">Vérifier ma réservation</button>
+                    </form>
+                </div>
+
+                <!-- Récapitulatif -->
+                <div class="summary-container" id="summary-container">
+                    <div class="summary-sticky">
+                        <h2>📋 Récapitulatif</h2>
+                        <div id="summary-content" class="summary-empty">
+                            <p>Remplissez le formulaire pour voir le récapitulatif de votre réservation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de confirmation -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="confirmation-body">
+                <!-- Le contenu sera inséré dynamiquement -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📍 RJP6+6X3، نهج خليفة القروي, Sousse</p>
+                <p>📞 +216 53 262 106</p>
+                <p>✉️ contact@tourandexperience.tn</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horaires</h3>
+                <p>Lundi - Vendredi: 9h - 19h</p>
+                <p>Samedi: 10h - 18h</p>
+                <p>Dimanche: Fermé</p>
+            </div>
+        <div class="footer-section">
+                <h3>Suivez-nous</h3>
+               <div class="social-links">
+        <a href="#" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Informations</h3>
+                <p><a href="#" style="color: white;">Mentions légales</a></p>
+                <p><a href="#" style="color: white;">Conditions générales</a></p>
+                <p><a href="#" style="color: white;">Politique de confidentialité</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 VoyageExplorer. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="reservation.js"></script>
+</body>
+</html

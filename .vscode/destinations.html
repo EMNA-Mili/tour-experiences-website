@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Agence de Voyage</title>
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+<a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Tour & Experiences">
+    <span class="logo-text">Tour&Experiences</span>
+</a>
+
+
+            <ul class="nav-links">
+               <li><a href="index.html">Accueil</a></li>
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="reservation.html">Réservations</a></li>
+    <li><a href="about.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-destinations">
+        <div class="hero-overlay">
+            <h1>Découvrez Nos Destinations</h1>
+            <p>Explorez le monde avec nos offres exceptionnelles</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <h2>Trouvez votre destination idéale</h2>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="type-filter">Type de voyage</label>
+                    <select id="type-filter" class="filter-select">
+                        <option value="all">Tous les types</option>
+                        <option value="plage">Plage</option>
+                        <option value="aventure">Aventure</option>
+                        <option value="culture">Culture</option>
+                        <option value="romantique">Romantique</option>
+                        <option value="famille">Famille</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="budget-filter">Budget</label>
+                    <select id="budget-filter" class="filter-select">
+                        <option value="all">Tous les budgets</option>
+                        <option value="economique">Économique (< 3000 DT)</option>
+                        <option value="moyen">Moyen (3000 DT - 7000 DT)</option>
+                        <option value="luxe">Luxe (> 7500 DT)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="periode-filter">Période</label>
+                    <select id="periode-filter" class="filter-select">
+                        <option value="all">Toutes les périodes</option>
+                        <option value="hiver">Hiver</option>
+                        <option value="printemps">Printemps</option>
+                        <option value="ete">Été</option>
+                        <option value="automne">Automne</option>
+                    </select>
+                </div>
+
+                <button class="search-btn" id="search-btn">Chercher</button>
+                <button class="reset-btn" id="reset-filters">Réinitialiser</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Grid -->
+    <section class="destinations-section">
+        <div class="container">
+            <div class="destinations-grid" id="destinations-grid">
+                <!-- Les destinations seront générées dynamiquement par JavaScript -->
+            </div>
+            <div class="no-results" id="no-results" style="display: none;">
+                <p>Aucune destination ne correspond à vos critères. Essayez d'autres filtres.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour les détails -->
+    <div class="modal" id="destination-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modal-body">
+                <!-- Le contenu sera inséré dynamiquement -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📍 RJP6+6X3، نهج خليفة القروي, Sousse</p>
+                <p>📞 +216 53 262 106</p>
+                <p>✉️ contact@tourandexperience.tn</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horaires</h3>
+                <p>Lundi - Vendredi: 9h - 19h</p>
+                <p>Samedi: 10h - 18h</p>
+                <p>Dimanche: Fermé</p>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+        <a href="#" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Informations</h3>
+                <p><a href="#" style="color: white;">Mentions légales</a></p>
+                <p><a href="#" style="color: white;">Conditions générales</a></p>
+                <p><a href="#" style="color: white;">Politique de confidentialité</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 VoyageExplorer. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="destinations.js"></script>
+</body>
+</html>
